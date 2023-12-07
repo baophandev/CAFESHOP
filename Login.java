@@ -119,7 +119,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         jLabel5.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel5.setText("! Email hoặc mật khẩu sai");
+        jLabel5.setText("! Username hoặc mật khẩu sai");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -433,6 +433,7 @@ public class PanelTongQuan extends javax.swing.JPanel {
         }
     }
     
+    //Hiển thị chi tiết sản phẩm
     public void loadDatatoSanPham(String so){
         try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -454,6 +455,24 @@ public class PanelTongQuan extends javax.swing.JPanel {
             }
             
             billDetail.setTitle("Hóa đơn số : " + so);
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }
+    
+    
+    
+    //Xóa hóa đơn
+    private void deteleData(String so){
+        try{
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            String dbUrl = "jdbc:sqlserver://LAPTOP-1QVPM352\\MSSQLEXPRESS:1433;databaseName=CAFEACCOUNT;user=sa;password=sa2023";
+            Connection con = DriverManager.getConnection(dbUrl);
+            Statement s = con.createStatement();
+            String query = "DELETE FROM HoaDon WHERE So = '"+so+"'";
+            s.executeUpdate(query);
+            
+            con.close();
         }catch(Exception ex){
             ex.printStackTrace();
         }

@@ -69,6 +69,8 @@ public class Home_ver2 extends javax.swing.JFrame {
         String iconPath = "D:\\Java Project\\CaiTiemCafe\\src\\caitiemcafe\\Image\\White_and_Brown_Elegant_Simple_Boba_Drink_Logo-removebg-preview.png";
         ImageIcon icon = new ImageIcon(iconPath);
         setIconImage(icon.getImage());
+        SanPham.setIconImage(icon.getImage());
+        Timkiem.setIconImage(icon.getImage());
 
         //Nút xóa được xử lý
         tableDetail.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -164,8 +166,10 @@ public class Home_ver2 extends javax.swing.JFrame {
         giamColumn.setCellEditor(new Home_ver2.ButtonEditor(new JCheckBox()));
         
         pnMain.setLayout(new BorderLayout());
+        pnMainTK.setLayout(new BorderLayout());
         
         SanPham.setPreferredSize(new Dimension(1000, 700));
+        Timkiem.setPreferredSize(new Dimension(720, 400));
         
     }
 
@@ -373,6 +377,8 @@ public class Home_ver2 extends javax.swing.JFrame {
         SanPham = new javax.swing.JDialog();
         pnMain = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
+        Timkiem = new javax.swing.JDialog();
+        pnMainTK = new javax.swing.JPanel();
         pnShow = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableDetail = new javax.swing.JTable();
@@ -394,6 +400,7 @@ public class Home_ver2 extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
@@ -734,6 +741,30 @@ public class Home_ver2 extends javax.swing.JFrame {
                 .addComponent(jButton2))
         );
 
+        Timkiem.setTitle("Tìm kiếm hóa đơn");
+
+        javax.swing.GroupLayout pnMainTKLayout = new javax.swing.GroupLayout(pnMainTK);
+        pnMainTK.setLayout(pnMainTKLayout);
+        pnMainTKLayout.setHorizontalGroup(
+            pnMainTKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 918, Short.MAX_VALUE)
+        );
+        pnMainTKLayout.setVerticalGroup(
+            pnMainTKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 582, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout TimkiemLayout = new javax.swing.GroupLayout(Timkiem.getContentPane());
+        Timkiem.getContentPane().setLayout(TimkiemLayout);
+        TimkiemLayout.setHorizontalGroup(
+            TimkiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnMainTK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        TimkiemLayout.setVerticalGroup(
+            TimkiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnMainTK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CÁI TIỆM CÀ PHÊ ");
         setBackground(new java.awt.Color(255, 255, 255));
@@ -917,6 +948,14 @@ public class Home_ver2 extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem1);
+
+        jMenuItem5.setText("Tìm kiếm hóa đơn");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem5);
 
         jMenuBar1.add(jMenu1);
 
@@ -1169,6 +1208,19 @@ public class Home_ver2 extends javax.swing.JFrame {
         loadData();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        Timkiem.setVisible(true);
+        Timkiem.pack();
+        pnMainTK.removeAll();
+        pnMainTK.setPreferredSize(new Dimension(1000, 620));
+        PanelTimKiem panelTimKiem = new PanelTimKiem();
+        pnMainTK.add(panelTimKiem, BorderLayout.CENTER);
+        
+        pnMainTK.revalidate();
+        pnMainTK.repaint();
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
     private void insertHoaDon(String soHoaDon, String dayNow, String nhanVienThuNgan, int tong, int giam, int thanhToan, int tienKhachDua, int tienTraLai) {
 
         try {
@@ -1381,6 +1433,7 @@ public class Home_ver2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog SanPham;
+    private javax.swing.JDialog Timkiem;
     private javax.swing.JDialog billDetail;
     private javax.swing.JButton btnAddVoucher;
     private javax.swing.JButton btnBillDetail;
@@ -1421,6 +1474,7 @@ public class Home_ver2 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -1437,6 +1491,7 @@ public class Home_ver2 extends javax.swing.JFrame {
     private javax.swing.JLabel lblTienTraLai;
     private javax.swing.JLabel lblTong;
     private javax.swing.JPanel pnMain;
+    private javax.swing.JPanel pnMainTK;
     private javax.swing.JPanel pnShow;
     private javax.swing.JTable tableBillDetail;
     private javax.swing.JTable tableDetail;
