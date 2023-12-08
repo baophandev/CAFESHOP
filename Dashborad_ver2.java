@@ -225,7 +225,7 @@ public class Dashborad_ver2 extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(38, 80, 115));
-        jLabel7.setText("TÀI KHOẢN HÓA ĐƠN");
+        jLabel7.setText("TÌM KIẾM HÓA ĐƠN");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -283,7 +283,7 @@ public class Dashborad_ver2 extends javax.swing.JFrame {
         pnMain.setLayout(pnMainLayout);
         pnMainLayout.setHorizontalGroup(
             pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1038, Short.MAX_VALUE)
+            .addGap(0, 1053, Short.MAX_VALUE)
         );
         pnMainLayout.setVerticalGroup(
             pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
